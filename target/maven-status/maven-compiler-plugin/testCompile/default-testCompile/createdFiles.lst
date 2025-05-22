@@ -1,0 +1,4 @@
+com\waveguide\service\WaveguideServiceTest.class
+com\waveguide\WaveguideManagementSystemApplicationTests.class
+com\waveguide\service\UserServiceTest.class
+com\waveguide\controller\AuthControllerIntegrationTest.class

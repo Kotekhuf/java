@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  sql:
+    init:
+      mode: never
+
+app:
+  security:
+    jwt:
+      secret-key: testSecretKeyForSecurityTestingPurposesOnlyDoNotUseInProduction
+      expiration-ms: 3600000  # 1 hour
+      issuer: waveguide-management-system-test
+    bcrypt:
+      strength: 4  # Reduced strength for faster tests
+  cors:
+    allowed-origins: http://localhost:3000
+  rate-limiting:
+    requests-per-hour: 1000  # Higher limit for testing
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate: INFO
+    com.waveguide: DEBUG
